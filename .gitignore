@@ -3,3 +3,8 @@ data/spatial_correlation.txt
 data/average_time_dependence.txt
 data/follower_agents.txt
 data/informed_agents.txt
+swarm_motion_couzin/data/swarm_connectity.txt
+swarm_motion_couzin/data/spatial_correlation.txt
+swarm_motion_couzin/data/average_time_dependence.txt
+swarm_motion_couzin/data/follower_agents.txt
+swarm_motion_couzin/data/informed_agents.txt
