@@ -19,3 +19,5 @@ def clear_folder(folder_path):
 # 使用示例：清空名为 "target_folder" 的文件夹
 target_folder = "data"
 clear_folder(target_folder)
+target_folder_contrast= "swarm_motion_couzin/data"
+clear_folder(target_folder_contrast)
