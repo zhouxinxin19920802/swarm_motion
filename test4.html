@@ -370,7 +370,8 @@
 								var angle = Math.acos((x1 * x2 + y1 * y2) / Math.sqrt(Math.pow(x2, 2) + Math.pow(y2, 2)));
 							}
 							//th1判断运动方向是否一致
-							var th1 = Math.cos(this_individual.theta - individual.theta)   //两个粒子运动方向之间的夹角，夹角越大，方向差异越大，交互能见角越大
+							//两个粒子运动方向之间的夹角，夹角越大，方向差异越大，交互能见角越大
+							var th1 = Math.cos(this_individual.theta - individual.theta)   
 							var angle1 = (-1 / 4) * Math.PI * th1 + Math.PI;
 							if (rij <= config.r_squared && angle < angle1) {
 								var k1;

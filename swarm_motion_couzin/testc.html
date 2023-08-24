@@ -372,7 +372,7 @@
 							//th1判断运动方向是否一致
 							//两个粒子运动方向之间的夹角，夹角越大，方向差异越大，交互能见角越大
 							var th1 = Math.cos(this_individual.theta - individual.theta)   
-							var angle1 = Math.PI*3/2;
+							var angle1 = Math.PI*3/4;
 							if (rij <= config.r_squared && angle < angle1) {
 								var k1;
 								var k2;
@@ -502,7 +502,6 @@
 					//如果存在邻居
 
 					for (var k = 0; k <= K; k++) {
-
 						//处在通信半径中的邻居之间画线连接
 						this_individual.neigh[e] = dij[k][1].index;
 						e++;
@@ -1348,11 +1347,11 @@
 
 			//到达率
 			//到达的不知情个体个数
-			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_agents.txt")){
-				var fcountnof = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_agents.txt", 8, false);
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt")){
+				var fcountnof = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt", 8, false);
 			}
 			else{
-				var fcountnof = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_agents.txt", 8, false);
+				var fcountnof = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt", 8, false);
 			}
 			//到达的知情个体个数
 			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents.txt")){
