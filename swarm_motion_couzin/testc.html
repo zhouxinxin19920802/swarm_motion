@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Vicsek Model Simulation</title>
+	<title>testc</title>
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro">
 	<style>
 		* {
@@ -575,22 +575,22 @@
 				if (Math.pow(this.x - config.xf, 2) + Math.pow(this.y - config.yf, 2) > Math.pow(config.neighborhood_radius_align, 2)) {
 					if ((this_individual.sign_informed == 1 && !(this_individual.sign == 1 && if_attack == 1)) || Math.pow((config.yf - this_individual.y), 2) + Math.pow((config.xf - this_individual.x), 2) <= Math.pow(config.rf, 2)) {
 						
-						// if (s - 1 > 0) {
-						// 	// 知情者w的更新
-						// 	var neiX = 0, neiY = 0;//记录邻居的平均位置
-						// 	var nei_d; //记录知情者与邻居之间的距离
-						// 	for (var k = 1; k <= K; k++) {
-						// 		neiX += dij[k][1].x;
-						// 		neiY += dij[k][1].y;
-						// 	}
-						// 	nei_d = Math.sqrt(Math.pow((this_individual.x - neiX / K), 2), Math.pow((this_individual.y - neiY / K), 2));
-						// 	this_individual.w = Math.exp((config.N / 25) * (-nei_d / config.neighborhood_radius));
+						if (s - 1 > 0) {
+							// 知情者w的更新
+							var neiX = 0, neiY = 0;//记录邻居的平均位置
+							var nei_d; //记录知情者与邻居之间的距离
+							for (var k = 1; k <= K; k++) {
+								neiX += dij[k][1].x;
+								neiY += dij[k][1].y;
+							}
+							nei_d = Math.sqrt(Math.pow((this_individual.x - neiX / K), 2), Math.pow((this_individual.y - neiY / K), 2));
+							this_individual.w = Math.exp((config.N / 25) * (-nei_d / config.neighborhood_radius));
 
-						// }
-						// else {
-						// 	this_individual.w = 1;
-						// }
-						this.w = 1;
+						}
+						else {
+							this_individual.w = 1;
+						}
+						// this.w = 1;
 						neighbors_theta1 += this_individual.w * config.py;
 						neighbors_theta2 += this_individual.w * config.px;
 						/*neighbors_theta1+=1*config.py;
