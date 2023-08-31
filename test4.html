@@ -373,6 +373,7 @@
 							//两个粒子运动方向之间的夹角，夹角越大，方向差异越大，交互能见角越大
 							var th1 = Math.cos(this_individual.theta - individual.theta)   
 							var angle1 = (-1 / 4) * Math.PI * th1 + Math.PI;
+							console.log("angle:",angle,"   ","angle1:",angle1);
 							if (rij <= config.r_squared && angle < angle1) {
 								var k1;
 								var k2;
@@ -1360,6 +1361,17 @@
 				var fcountinf = fso.createtextfile("E:\\zhouxin\\swarm_motion\\data\\informed_agents.txt", 8, false);
 			}
 
+			// 记录个体到达终点的时间
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\data\\time_destination.txt")){
+				var fT = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\data\\time_destination.txt", 8, false);
+			}
+			else{
+				var fT = fso.createtextfile("E:\\zhouxin\\swarm_motion\\data\\time_destination_s.txt", 8, false);
+			}
+
+
+
+
 			// fbound0.Writeline("hha");
 			// fbound0.close();
 			// //存储攻击初始时刻被困住的个数
@@ -1739,7 +1751,7 @@
 							test2 = Math.sqrt(Math.pow(Math.cos(population[i].theta) - Math.cos(population[j].theta), 2) + Math.pow(Math.sin(population[i].theta) - Math.sin(population[j].theta), 2));
 							if (test2 != 0){
 								dflag2++;
-							    RelSpeed += test2;
+						        RelSpeed = RelSpeed + test2;
 							}
 						}
 
@@ -1793,6 +1805,7 @@
 					// fT.Writeline(num);
 					if (firstnum == 0) {
 						firstnum = num;
+						fT.Writeline(num);
 					}
 					// zxx: 判断第几个step有第一个点到达终点
 					flag1 = 1;
@@ -1909,6 +1922,20 @@
                     // 平均时间相关性
 					fDegreeTime.Writeline();
 					fDegreeTime.close();
+
+					// 追随者到达率
+					fcountnof.Writeline();
+					fcountnof.close();
+
+					// 知情者到达的个数
+					fcountinf.Writeline();
+					fcountinf.close();
+
+					//  第一个智能体到达的时间
+					fT.Writeline();
+					fT.close();
+
+
 					// // 平均相对速度
 					// fRelSpeed.Writeline();
 					// fRelSpeed.close();

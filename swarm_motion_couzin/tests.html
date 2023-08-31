@@ -372,7 +372,7 @@
 							//th1判断运动方向是否一致
 							//两个粒子运动方向之间的夹角，夹角越大，方向差异越大，交互能见角越大
 							var th1 = Math.cos(this_individual.theta - individual.theta)
-							var angle1 = Math.PI * 5 / 4;
+							var angle1 = Math.PI * 3 / 4;
 							if (rij <= config.r_squared && angle < angle1) {
 								var k1;
 								var k2;
@@ -1320,46 +1320,47 @@
 
 			// 连通度
 			var fso = new ActiveXObject("Scripting.FileSystemObject");
-			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity.txt")) {
-				test = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity.txt", 8, false);
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity_s.txt")) {
+				test = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity_s.txt", 8, false);
 			}
 			else {
-				test = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity.txt", 8, false);
+				test = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\swarm_connectity_s.txt", 8, false);
 			}
 
 			// 平均空间相关度
 			var fso = new ActiveXObject("Scripting.FileSystemObject");
-			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation.txt")) {
-				fDegreeSpace = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation.txt", 8, false);
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation_s.txt")) {
+				fDegreeSpace = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation_s.txt", 8, false);
 			}
 			else {
-				fDegreeSpace = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation.txt", 8, false);
+				fDegreeSpace = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\spatial_correlation_s.txt", 8, false);
 			}
 
 			// 平均时间依赖程度
 			var fso_time = new ActiveXObject("Scripting.FileSystemObject");
-			if (fso_time.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence.txt")) {
-				var fDegreeTime = fso_time.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence.txt", 8, false);
+			if (fso_time.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence_s.txt")) {
+				var fDegreeTime = fso_time.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence_s.txt", 8, false);
 			}
 			else {
-				var fDegreeTime = fso_time.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence.txt", 8, false);
+				var fDegreeTime = fso_time.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\average_time_dependence_s.txt", 8, false);
 			}
 
 			//到达率
 			//到达的不知情个体个数
-			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt")) {
-				var fcountnof = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt", 8, false);
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_s.txt")) {
+				var fcountnof = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_s.txt", 8, false);
 			}
 			else {
-				var fcountnof = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents.txt", 8, false);
+				var fcountnof = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\follower_agents_s.txt", 8, false);
 			}
 			//到达的知情个体个数
-			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents.txt")) {
-				var fcountinf = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents.txt", 8, false);
+			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents_s.txt")) {
+				var fcountinf = fso.OpenTextFile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents_s.txt", 8, false);
 			}
 			else {
-				var fcountinf = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents.txt", 8, false);
+				var fcountinf = fso.createtextfile("E:\\zhouxin\\swarm_motion\\swarm_motion_couzin\\data\\informed_agents_s.txt", 8, false);
 			}
+
 
 			// 记录个体到达终点的时间
 			if (fso.FileExists("E:\\zhouxin\\swarm_motion\\data\\time_destination.txt")) {
@@ -1368,8 +1369,6 @@
 			else {
 				var fT = fso.createtextfile("E:\\zhouxin\\swarm_motion\\data\\time_destination_s.txt", 8, false);
 			}
-
-
 			// fbound0.Writeline("hha");
 			// fbound0.close();
 			// //存储攻击初始时刻被困住的个数
@@ -1800,6 +1799,7 @@
 
 				// zxx: count_fn在每个时间间隔里会被初始为0，一旦有节点到达终点后，count_fn就不会更新了
 				if ((count_fn > 0 && flag1 != 1) || num == config.T - 2) {
+
 					if (firstnum == 0) {
 						firstnum = num;
 						fT.Writeline(num);
@@ -1931,6 +1931,7 @@
 					//  第一个智能体到达的时间
 					fT.Writeline();
 					fT.close();
+
 
 					// // 平均相对速度
 					// fRelSpeed.Writeline();

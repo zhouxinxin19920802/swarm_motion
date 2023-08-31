@@ -4,6 +4,15 @@
 /data/follower_agents.txt
 /data/informed_agents.txt
 
+/data/swarm_connectity_s.txt
+/data/spatial_correlation_s.txt
+/data/average_time_dependence_s.txt
+/data/follower_agents_s.txt
+/data/informed_agents_s.txt
+
+
+
+
 /swarm_motion_couzin/data/swarm_connectity.txt
 /swarm_motion_couzin/data/spatial_correlation.txt
 /swarm_motion_couzin/data/average_time_dependence.txt
